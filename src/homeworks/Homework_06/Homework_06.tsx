@@ -2,7 +2,7 @@ import "./styles.css";
 
 function Homework_06() {
   // В нем нужно протипизировать следующий массив обьектов:
-  const cars = [
+  const cars: Car[] = [
     { brand: "BMW", price: 20000, isDiesel: true },
     { brand: "Mercedes", price: 22000, isDiesel: false },
     { brand: "Porshe", price: 50000, isDiesel: true },
@@ -10,28 +10,20 @@ function Homework_06() {
     { brand: "Audi", price: 50000, isDiesel: true },
   ];
 
-  type Car = {
+  interface Car {
     brand: string;
     price: number;
     isDiesel: boolean;
   };
 
-  const typedCars: Car[] = cars.map(({ brand, price, isDiesel }) => {
-    return {
-      brand,
-      price,
-      isDiesel,
-    };
-  });
-
   // Используя map JSX элементов, расположите данные из обьектов в карточках и покажите эти карточки на странице.
   //  Стили на ваше усмотрение
 
-  const carsCards = typedCars.map((car) => {
+  const carsCards = cars.map((carObj: Car) => {
     return (<div className="car-card">
-      <p>Brand: {car.brand}</p>
-      <p>Price: {car.price}</p>
-      <p>Fuel type: {car.isDiesel ? "Diesel" : "Gas"}</p>
+      <p>Brand: {carObj.brand}</p>
+      <p>Price: {carObj.price}$</p>
+      <p>Fuel type: {carObj.isDiesel ? "Diesel" : "Gas"}</p>
     </div>)
   })
   return <div className="cars-container">{carsCards}</div>;

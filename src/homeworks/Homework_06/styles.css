@@ -2,11 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .car-card {
     width: 200px;
-    height: 100px;
+    min-height: 100px;
+    max-height: fit-content;
     padding: 20px;
     margin: 20px;
     background-color: black;
