@@ -1,4 +1,5 @@
 import "./styles.css";
+import {v4} from "uuid";
 
 function Homework_06() {
   // В нем нужно протипизировать следующий массив обьектов:
@@ -20,7 +21,7 @@ function Homework_06() {
   //  Стили на ваше усмотрение
 
   const carsCards = cars.map((carObj: Car) => {
-    return (<div className="car-card">
+    return (<div className="car-card" key={v4()}>
       <p>Brand: {carObj.brand}</p>
       <p>Price: {carObj.price}$</p>
       <p>Fuel type: {carObj.isDiesel ? "Diesel" : "Gas"}</p>
