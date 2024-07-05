@@ -1,15 +1,16 @@
 import "./App.css";
 
-import Lesson_06 from "./components/lessons/Lesson_06/Lesson_06";
+import Lesson_06 from "./lessons/Lesson_06/Lesson_06";
+import Homework_06 from "./homeworks/Homework_06/Homework_06";
 
 function App() {
   return <div className="App">
   {/* ---------------------------------------------------- Lessons ---------------------------------------------------------*/}
   
-  <Lesson_06 />
+  {/* <Lesson_06 /> */}
 
   {/* ---------------------------------------------------- Homeworks -------------------------------------------------------*/}
-  
+  <Homework_06 />
 
   {/*  --------------------------------------------------- Consultations ---------------------------------------------------*/}
   

@@ -1,0 +1,16 @@
+.cars-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-card {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin: 20px;
+    background-color: black;
+    font-size: large;
+    color: white;
+    border-radius: 4px;
+}
