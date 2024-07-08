@@ -1,5 +1,7 @@
 import "./styles.css";
 import {v4} from "uuid";
+import { ReactNode } from "react";
+import {Car} from "./types"
 
 function Homework_06() {
   // В нем нужно протипизировать следующий массив обьектов:
@@ -11,16 +13,11 @@ function Homework_06() {
     { brand: "Audi", price: 50000, isDiesel: true },
   ];
 
-  interface Car {
-    brand: string;
-    price: number;
-    isDiesel: boolean;
-  };
-
   // Используя map JSX элементов, расположите данные из обьектов в карточках и покажите эти карточки на странице.
   //  Стили на ваше усмотрение
 
-  const carsCards = cars.map((carObj: Car) => {
+  // типизируем ReactNode типизируем ВСЁ!
+  const carsCards: ReactNode[] = cars.map((carObj: Car) => {
     return (<div className="car-card" key={v4()}>
       <p>Brand: {carObj.brand}</p>
       <p>Price: {carObj.price}$</p>
