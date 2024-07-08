@@ -1,41 +1,31 @@
-import { useState } from "react";
-
 // import Like from "../../assets/like.png";
 
-import Button from "../Button/Button";
+import Button from "components/Button/Button";
 
 import "./styles.css";
+import { FeedbackProps } from "./types";
 
-function Feedback() {
-  const [like, setLike] = useState(0);
-  const [dislike, setDislike] = useState(0);
-
-  const onLike = () => {
-    setLike((prevValue) => prevValue + 1);
-  };
-
-  const onDislike = () => {
-    setDislike((prevValue) => prevValue + 1);
-  };
-  const resetResults = () => {
-    setLike(0);
-    setDislike(0);
-  };
-
+function Feedback({
+  likes,
+  dislikes,
+  onLikeFunction,
+  onDislikeFunction,
+  resetResultsFunction,
+}: FeedbackProps) {
   return (
     <div className="feedback-wrapper">
       <div className="feedback-control">
         <div className="buttonwithcount-container">
           {/* <Button imgSrc={Like} name="Like" onClick={onLike} /> */}
-          <Button name="Like" onClick={onLike} />
-          <p className="count">{like}</p>
+          <Button name="Like" onClick={onLikeFunction} />
+          <p className="count">{likes}</p>
         </div>
         <div className="buttonwithcount-container">
-          <Button name="Dislike" onClick={onDislike} />
-          <p className="count">{dislike}</p>
+          <Button name="Dislike" onClick={onDislikeFunction} />
+          <p className="count">{dislikes}</p>
         </div>
       </div>
-      <Button name="Reset Results" onClick={resetResults} />
+      <Button name="Reset Results" onClick={resetResultsFunction} />
     </div>
   );
 }
