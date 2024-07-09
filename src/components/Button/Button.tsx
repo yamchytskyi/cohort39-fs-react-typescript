@@ -1,19 +1,22 @@
-import "./styles.css";
+import { StyledButton, StyledImgButton } from "./styles";
 import { ButtonProps } from "./types";
 
 function Button({
+  isDisabled = false,
+  isRed = false,
   imgSrc,
   type = "button",
   name = "Send",
   onClick,
 }: ButtonProps) {
   return (
-    <button onClick={onClick} type={type} className="button-component">
+    <StyledButton disabled={isDisabled} $isRed={isRed} onClick={onClick} type={type}>
       {/* Если imgSrc === true, то правая часть после && показывается на странице
       Если imgSrc === false, то правая часть после && скрывается */}
-      {imgSrc && <img className="button-img" src={imgSrc} />}
+      {imgSrc && <StyledImgButton src={imgSrc} />}
       {!imgSrc && name}
-    </button>
+      
+    </StyledButton>
   );
 }
 

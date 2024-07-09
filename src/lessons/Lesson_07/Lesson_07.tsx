@@ -1,8 +1,11 @@
+// 1м идет импорт библиотек
 import { useState } from "react";
 
+// 2м идет импорт абсолютных путей
 import Counter from "components/Counter/Counter";
 import Button from "components/Button/Button"
 
+// 3м идет импорт относительных путей
 import { WEATHER_CODE } from "./types";
 import "./styles.css";
 
