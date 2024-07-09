@@ -21,7 +21,7 @@ export function Homework_07() {
     setDislike(0);
   };
 
-  const CurrentLikesDislikesToConsole = (): void => {
+  const currentLikesDislikesToConsole = (): void => {
     console.log(`Likes: ${like}, Dislikes: ${dislike}`)
   }
 
@@ -34,7 +34,7 @@ export function Homework_07() {
         likes={like}
         dislikes={dislike}
       />
-      <Button name="Console Current Likes" onClick={CurrentLikesDislikesToConsole}/>
+      <Button name="Console Current Likes" onClick={currentLikesDislikesToConsole}/>
     </div>
   );
 }
