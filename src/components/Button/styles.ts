@@ -1,17 +1,17 @@
 import styled from "@emotion/styled";
 
 interface StyledButtonProps {
-    $isRed?: boolean
+  $isRed?: boolean;
 }
 
 const getButtonColor = (disabled: boolean | undefined, isRed: boolean | undefined) => {
-    if(disabled) {
-        return "gray"
-    } else if(isRed) {
-        return "red";
-    } else {
-        return  "#1f27f5"
-    }
+  if(disabled) {
+    return "grey"
+  } else if (isRed) {
+    return "red"
+  } else {
+    return "#1f27f5"
+  }
 }
 
 export const StyledButton = styled("button")<StyledButtonProps>`
@@ -22,11 +22,11 @@ export const StyledButton = styled("button")<StyledButtonProps>`
   font-size: 20px;
   color: #ffffff;
   font-weight: bold;
-  background-color: ${({disabled, $isRed})=> getButtonColor(disabled, $isRed)} ;
-  cursor:  ${({disabled})=> (disabled ? "not-allowed" : "pointer")};
+  background-color: ${({ disabled, $isRed }) => getButtonColor(disabled, $isRed)};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
-export const StyledImgButton = styled("img")`
+export const ButtonImg = styled("img")`
   width: 20px;
   height: 20px;
 `;
