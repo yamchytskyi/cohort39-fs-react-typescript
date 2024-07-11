@@ -1,3 +1,5 @@
+import GlobalStyles from "styles/GlobalStyles";
+
 import "./App.css";
 
 //                                                   Lessons
@@ -17,6 +19,7 @@ import Homework_07 from "homeworks/Homework_07/Homework_07";
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
       {/* ---------------------------------------------------- Lessons ---------------------------------------------------------*/}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
