@@ -1,8 +1,10 @@
+import { HTMLInputTypeAttribute } from "react";
+
 export interface InputPromise {
-    id?: string | undefined;
-    name: string | undefined;
-    type: React.HTMLInputTypeAttribute | undefined;
-    placeholder?: string | undefined;
-    label: string | undefined;
+    id: string | undefined;
+    name: string;
+    type: HTMLInputTypeAttribute;
+    placeholder?: string;
+    label: string;
   }
   
