@@ -3,9 +3,18 @@ import {
   StyledInputLabel,
   StyledInputComponent,
 } from "./styles";
+
 import { InputPromise } from "./types";
 
-function Input({ id, name, type, placeholder, label }: InputPromise) {
+function Input({
+  id,
+  name,
+  type,
+  placeholder,
+  label,
+  value,
+  onChange,
+}: InputPromise) {
   return (
     <StyledInputWrapper>
       <StyledInputLabel htmlFor={id}>{label}</StyledInputLabel>
@@ -14,6 +23,8 @@ function Input({ id, name, type, placeholder, label }: InputPromise) {
         name={name}
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       />
     </StyledInputWrapper>
   );

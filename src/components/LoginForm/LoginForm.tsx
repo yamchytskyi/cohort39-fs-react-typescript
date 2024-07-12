@@ -29,6 +29,7 @@ function LoginForm() {
           type="email"
           placeholder="Enter your email"
           label="Email"
+          
         />
         <Input
           id="password-id"
