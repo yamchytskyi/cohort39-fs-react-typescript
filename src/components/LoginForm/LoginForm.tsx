@@ -1,7 +1,7 @@
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 
-import "./styles.css";
+import { StyledContainer, StyledTitle, StyledInputsContainer } from "./styles";
 
 function LoginForm() {
   /* Пример работы с onClick() */
@@ -17,12 +17,12 @@ function LoginForm() {
   const login = (event: React.MouseEvent): void => {
     event.preventDefault();
     console.log("User logged in succesfully");
-  }
+  };
 
   return (
-    <form className="login-form-container">
-      <p className="title">Login form</p>
-      <div className="inputs-container">
+    <StyledContainer>
+      <StyledTitle>Login form</StyledTitle>
+      <StyledInputsContainer>
         <Input
           id="email-id"
           name="email"
@@ -37,11 +37,11 @@ function LoginForm() {
           placeholder="Enter your password"
           label="Password"
         />
-      </div>
+      </StyledInputsContainer>
       <Button onClick={login} name="Login" type="submit" />
       {/* Пример работы с onClick() */}
       {/* <button onClick={(event) => clickOnMe(event, "Some message")} className="button-click" type="button">Click me!!!</button> */}
-    </form>
+    </StyledContainer>
   );
 }
 

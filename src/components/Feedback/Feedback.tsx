@@ -2,7 +2,15 @@
 
 import Button from "components/Button/Button";
 
-import "./styles.css";
+import {
+  StyledFeedback,
+  StyledFeedbackControl,
+  StyledButtonCounterContainer,
+  StyledCount,
+  StyledImg,
+  StyledImageControl,
+} from "./styles";
+
 import { FeedbackProps } from "./types";
 
 function Feedback({
@@ -13,20 +21,20 @@ function Feedback({
   resetResultsFunction,
 }: FeedbackProps) {
   return (
-    <div className="feedback-wrapper">
-      <div className="feedback-control">
-        <div className="buttonwithcount-container">
+    <StyledFeedback>
+      <StyledFeedbackControl>
+        <StyledButtonCounterContainer>
           {/* <Button imgSrc={Like} name="Like" onClick={onLike} /> */}
           <Button name="Like" onClick={onLikeFunction} />
-          <p className="count">{likes}</p>
-        </div>
-        <div className="buttonwithcount-container">
+          <StyledCount>{likes}</StyledCount>
+        </StyledButtonCounterContainer>
+        <StyledButtonCounterContainer>
           <Button name="Dislike" onClick={onDislikeFunction} />
-          <p className="count">{dislikes}</p>
-        </div>
-      </div>
+          <StyledCount>{dislikes}</StyledCount>
+        </StyledButtonCounterContainer>
+      </StyledFeedbackControl>
       <Button name="Reset Results" onClick={resetResultsFunction} />
-    </div>
+    </StyledFeedback>
   );
 }
 

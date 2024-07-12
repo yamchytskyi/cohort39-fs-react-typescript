@@ -1,12 +1,21 @@
-import './styles.css';
-import { InputPromise} from "./types"
+import {
+  StyledInputWrapper,
+  StyledInputLabel,
+  StyledInputComponent,
+} from "./styles";
+import { InputPromise } from "./types";
 
 function Input({ id, name, type, placeholder, label }: InputPromise) {
   return (
-    <div className='input-wrapper'>
-      <label className='input-label' htmlFor={id}>{label}</label>
-      <input className='input-component' id={id} name={name} type={type} placeholder={placeholder} />
-    </div>
+    <StyledInputWrapper>
+      <StyledInputLabel htmlFor={id}>{label}</StyledInputLabel>
+      <StyledInputComponent
+        id={id}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+      />
+    </StyledInputWrapper>
   );
 }
 

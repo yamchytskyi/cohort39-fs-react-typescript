@@ -1,5 +1,7 @@
-.counter-wrapper {
-  display: flex;
+import styled from "@emotion/styled"
+
+export const StyledCounter = styled.div`
+ display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -11,9 +13,9 @@
   padding: 20px;
   background-color: rgb(26, 35, 53);
   color: white;
-}
+`;
 
-.count {
-  font-size: 40px;
+export const StyledCount = styled.p`
+font-size: 40px;
   color: white;
-}
+`
