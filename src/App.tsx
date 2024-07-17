@@ -1,6 +1,11 @@
-import GlobalStyles from "styles/GlobalStyles";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import "./App.css";
+import GlobalStyles from "styles/GlobalStyles";
+import Layout from "components/Layout/Layout";
+import Home from "pages/EmployeeApp/Home/Home";
+import About from "pages/EmployeeApp/About/About";
+import Login from "pages/EmployeeApp/Login/Login";
+import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
 
 //                                                   Lessons
 import Lesson_06 from "./lessons/Lesson_06/Lesson_06";
@@ -8,7 +13,6 @@ import Lesson_07 from "./lessons/Lesson_07/Lesson_07";
 import Lesson_08 from "lessons/Lesson_08/Lesson_08";
 import Lesson_09 from "lessons/lesson_09/Lesson_09";
 import Lesson_10 from "lessons/Lesson_10/Lesson_10";
-import Lesson_11 from "lessons/Lesson_11/Lesson_11"
 
 //                                                   Homeworks
 import Homework_06 from "./homeworks/Homework_06/Homework_06";
@@ -22,8 +26,19 @@ import JokeAPI from "lessons/lesson_09/JokeAPI/JokeAPI";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      {/* div className="App" - где и почему удалили? */}
+      {/* <div className="App"> */}
       <GlobalStyles />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="login" element={<Login />} />
+          <Route path="contactUs" element={<ContactUs />} />
+          <Route path="*" element="Page Not Found!" />
+        </Routes>
+      </Layout>
       {/* ---------------------------------------------------- Lessons ---------------------------------------------------------*/}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
@@ -31,7 +46,7 @@ function App() {
       {/* <Lesson_09 /> */}
       {/* <JokeAPI /> */}
       {/* <Lesson_10 /> */}
-      <Lesson_11 />
+      {/* <Lesson_11 /> */}
 
       {/* ---------------------------------------------------- Homeworks -------------------------------------------------------*/}
       {/* <Homework_06 /> */}
@@ -42,7 +57,8 @@ function App() {
       {/*  --------------------------------------------------- Drafts-----------------------------------------------------------*/}
 
       {/* <Draft_1_l7 /> */}
-    </div>
+      {/* </div> */}
+    </BrowserRouter>
   );
 }
 
