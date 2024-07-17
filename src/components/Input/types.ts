@@ -6,6 +6,7 @@ export interface InputPromise {
     type?: HTMLInputTypeAttribute;
     placeholder?: string;
     label: string;
+    error?: string | undefined;
     // поля ниже должны быть обязательными
     value?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
