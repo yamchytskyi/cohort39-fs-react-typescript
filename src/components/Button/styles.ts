@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { error } from "console";
 
 interface StyledButtonProps {
   $isRed?: boolean;

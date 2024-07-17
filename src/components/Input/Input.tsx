@@ -2,6 +2,7 @@ import {
   StyledInputWrapper,
   StyledInputLabel,
   StyledInputComponent,
+  ErrorContained
 } from "./styles";
 
 import { InputPromise } from "./types";
@@ -14,6 +15,7 @@ function Input({
   label,
   value,
   onChange,
+  error,
 }: InputPromise) {
   return (
     <StyledInputWrapper>
@@ -25,7 +27,9 @@ function Input({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        $error={error}
       />
+      {!!error && <ErrorContained>{error}</ErrorContained>}
     </StyledInputWrapper>
   );
 }

@@ -8,6 +8,7 @@ import Lesson_07 from "./lessons/Lesson_07/Lesson_07";
 import Lesson_08 from "lessons/Lesson_08/Lesson_08";
 import Lesson_09 from "lessons/lesson_09/Lesson_09";
 import Lesson_10 from "lessons/Lesson_10/Lesson_10";
+import Lesson_11 from "lessons/Lesson_11/Lesson_11"
 
 //                                                   Homeworks
 import Homework_06 from "./homeworks/Homework_06/Homework_06";
@@ -29,7 +30,8 @@ function App() {
       {/* <Lesson_08 /> */}
       {/* <Lesson_09 /> */}
       {/* <JokeAPI /> */}
-      <Lesson_10 />
+      {/* <Lesson_10 /> */}
+      <Lesson_11 />
 
       {/* ---------------------------------------------------- Homeworks -------------------------------------------------------*/}
       {/* <Homework_06 /> */}
