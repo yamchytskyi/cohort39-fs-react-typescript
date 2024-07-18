@@ -29,6 +29,6 @@ export const StyledInputComponent = styled.input<StyledInputProps>`
   }
 `;
 
-export const ErrorContained = styled.div`
+export const ErrorContainer = styled.div`
 color: ${colors.ERROR};
 font-size: 18px`
