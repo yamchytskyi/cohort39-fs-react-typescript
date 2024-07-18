@@ -17,6 +17,7 @@ import Lesson_10 from "lessons/Lesson_10/Lesson_10";
 //                                                   Homeworks
 import Homework_06 from "./homeworks/Homework_06/Homework_06";
 import Homework_07 from "homeworks/Homework_07/Homework_07";
+import Homework_11 from "homeworks/Homework_11/Homework_11"
 
 //                                                   Consultations
 
@@ -51,6 +52,7 @@ function App() {
       {/* ---------------------------------------------------- Homeworks -------------------------------------------------------*/}
       {/* <Homework_06 /> */}
       {/* <Homework_07 /> */}
+      <Homework_11/>
 
       {/*  --------------------------------------------------- Consultations ---------------------------------------------------*/}
 

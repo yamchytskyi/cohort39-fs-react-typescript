@@ -2,7 +2,7 @@ import {
   StyledInputWrapper,
   StyledInputLabel,
   StyledInputComponent,
-  ErrorContained
+  ErrorContainer
 } from "./styles";
 
 import { InputPromise } from "./types";
@@ -29,7 +29,7 @@ function Input({
         onChange={onChange}
         $error={error}
       />
-      {!!error && <ErrorContained>{error}</ErrorContained>}
+      {!!error && <ErrorContainer>{error}</ErrorContainer>}
     </StyledInputWrapper>
   );
 }
