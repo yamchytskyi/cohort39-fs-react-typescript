@@ -6,6 +6,10 @@ import Home from "pages/EmployeeApp/Home/Home";
 import About from "pages/EmployeeApp/About/About";
 import Login from "pages/EmployeeApp/Login/Login";
 import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
+import Clients from "pages/EmployeeApp/Clients/Clients";
+import Tesla from "pages/EmployeeApp/Clients/Tesla/Tesla";
+import Apple from "pages/EmployeeApp/Clients/Apple/Apple";
+import Facebook from "pages/EmployeeApp/Clients/Facebook/Facebook";
 
 //                                                   Lessons
 import Lesson_06 from "./lessons/Lesson_06/Lesson_06";
@@ -17,7 +21,7 @@ import Lesson_10 from "lessons/Lesson_10/Lesson_10";
 //                                                   Homeworks
 import Homework_06 from "./homeworks/Homework_06/Homework_06";
 import Homework_07 from "homeworks/Homework_07/Homework_07";
-import Homework_11 from "homeworks/Homework_11/Homework_11"
+import Homework_11 from "homeworks/Homework_11/Homework_11";
 
 //                                                   Consultations
 
@@ -34,9 +38,13 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="login" element={<Login />} />
-          <Route path="contactUs" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/tesla" element={<Tesla />} />
+          <Route path="/clients/facebook" element={<Facebook />} />
+          <Route path="/clients/apple" element={<Apple />} />
           <Route path="*" element="Page Not Found!" />
         </Routes>
       </Layout>
@@ -52,7 +60,7 @@ function App() {
       {/* ---------------------------------------------------- Homeworks -------------------------------------------------------*/}
       {/* <Homework_06 /> */}
       {/* <Homework_07 /> */}
-      <Homework_11/>
+      {/* <Homework_11/> */}
 
       {/*  --------------------------------------------------- Consultations ---------------------------------------------------*/}
 
