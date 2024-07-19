@@ -18,6 +18,7 @@ import Lesson_08 from "lessons/Lesson_08/Lesson_08";
 import Lesson_09 from "lessons/lesson_09/Lesson_09";
 import Lesson_10 from "lessons/Lesson_10/Lesson_10";
 import Lesson_13 from "lessons/Lesson_13/Lesson_13"
+import Lesson_14 from "lessons/Lesson_14/Lesson_14"
 
 //                                                   Homeworks
 import Homework_06 from "./homeworks/Homework_06/Homework_06";
@@ -36,7 +37,7 @@ function App() {
       {/* div className="App" - где и почему удалили? */}
       {/* <div className="App"> */}
       <GlobalStyles />
-      <Layout>
+      {/* <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -48,7 +49,7 @@ function App() {
           <Route path="/clients/apple" element={<Apple />} />
           <Route path="*" element="Page Not Found!" />
         </Routes>
-      </Layout>
+      </Layout> */}
       {/* ---------------------------------------------------- Lessons ---------------------------------------------------------*/}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
@@ -58,6 +59,7 @@ function App() {
       {/* <Lesson_10 /> */}
       {/* <Lesson_11 /> */}
       {/* <Lesson_13/> */}
+      <Lesson_14 />
 
       {/* ---------------------------------------------------- Homeworks -------------------------------------------------------*/}
       {/* <Homework_06 /> */}
