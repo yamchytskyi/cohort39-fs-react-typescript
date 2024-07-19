@@ -36,7 +36,7 @@ function App() {
       {/* div className="App" - где и почему удалили? */}
       {/* <div className="App"> */}
       <GlobalStyles />
-      {/* <Layout>
+      <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -48,7 +48,7 @@ function App() {
           <Route path="/clients/apple" element={<Apple />} />
           <Route path="*" element="Page Not Found!" />
         </Routes>
-      </Layout> */}
+      </Layout>
       {/* ---------------------------------------------------- Lessons ---------------------------------------------------------*/}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
@@ -57,7 +57,7 @@ function App() {
       {/* <JokeAPI /> */}
       {/* <Lesson_10 /> */}
       {/* <Lesson_11 /> */}
-      <Lesson_13/>
+      {/* <Lesson_13/> */}
 
       {/* ---------------------------------------------------- Homeworks -------------------------------------------------------*/}
       {/* <Homework_06 /> */}
