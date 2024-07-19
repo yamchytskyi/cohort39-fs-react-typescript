@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 // NavLink(применили в хедере) и Link(применили в футере)
 // Мы уже задекларировали костанту Link на ~49й строке, имя занято, поэтому используем импорт: "Компонент as ЗадаемИяКомпоненту"
 import { NavLink, Link as SimpleLink } from "react-router-dom";
+import logo_viper_white from "assets/images/logo_viper_white.png";
 
 import { colors } from "styles/colors";
 
@@ -16,7 +17,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 100px;
+  height: 120px;
   border-bottom: 1px solid black;
   background-color: ${colors.PRIMARY};
   padding: 20px 40px;
@@ -24,13 +25,17 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.div`
-  height: 100%;
-  width: 60px;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
 `;
 
 export const LogoImg = styled.img`
   width: 100%;
   height: 100%;
+  &:hover {
+    content: url(${logo_viper_white});
+  }
 `;
 
 export const NavContainer = styled.nav`
@@ -43,10 +48,13 @@ export const NavContainer = styled.nav`
 // первый способ(предпочтительный) работы со ссылками
 // заменяем тег <a/> на NavLink из библиотеки "react-router-dom"
 export const Link = styled(NavLink)`
-  color: white;
+  color: red;
   font-size: 20px;
   font-weight: normal;
   text-decoration: none;
+  &:hover {
+    color: white;
+  }
 `;
 
 export const Main = styled.main`
@@ -70,6 +78,7 @@ export const Footer = styled.footer`
 export const FooterLogo = styled.div`
   height: 80px;
   width: 80px;
+  cursor: pointer;
 `;
 
 export const FooterNav = styled.nav`
@@ -80,7 +89,11 @@ export const FooterNav = styled.nav`
 
 //второй сособ работы со ссылками
 export const FooterLink = styled(SimpleLink)`
-  color: white;
+  color: red;
   font-size: 14px;
   font-weight: bold;
+
+  &:hover {
+    color: white;
+  }
 `;

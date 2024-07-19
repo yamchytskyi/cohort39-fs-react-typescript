@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import {
   LayoutWrapper,
   Header,
@@ -13,14 +15,20 @@ import {
 } from "./styles";
 import { LayoutProps } from "./types";
 
-import user_app_logo from "assets/images/user_app_logo.png";
+import logo_viper from "assets/images/logo_viper_red.png";
 
 function Layout({ children }: LayoutProps) {
+  const navigate = useNavigate();
+
+  const goHomePage = () => {
+    navigate("/");
+  };
+
   return (
     <LayoutWrapper>
       <Header>
-        <Logo>
-          <LogoImg src={user_app_logo} alt="App Logo"></LogoImg>
+        <Logo onClick={goHomePage}>
+          <LogoImg src={logo_viper} alt="App Logo"></LogoImg>
         </Logo>
         <NavContainer>
           {/* Вместо тега <a/> используем стилизованный NavLink из библиотеки "react-router-dom" 
@@ -61,19 +69,29 @@ function Layout({ children }: LayoutProps) {
           >
             Login
           </Link>
+          <Link
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/clients"
+          >
+            Clients
+          </Link>
         </NavContainer>
       </Header>
       {/* Закидываем в мейн страницу через children */}
       <Main>{children}</Main>
       <Footer>
-        <FooterLogo>
-          <LogoImg src={user_app_logo} alt="App Logo"></LogoImg>
+        <FooterLogo onClick={goHomePage}>
+          <LogoImg src={logo_viper} alt="App Logo"></LogoImg>
         </FooterLogo>
         <FooterNav>
           <FooterLink to="/">Home</FooterLink>
           <FooterLink to="/contactUs">Contact Us</FooterLink>
           <FooterLink to="/about">About</FooterLink>
           <FooterLink to="/login">Login</FooterLink>
+          <FooterLink to="/clients">Clients</FooterLink>
         </FooterNav>
       </Footer>
     </LayoutWrapper>
