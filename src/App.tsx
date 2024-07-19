@@ -10,6 +10,9 @@ import Clients from "pages/EmployeeApp/Clients/Clients";
 import Tesla from "pages/EmployeeApp/Clients/Tesla/Tesla";
 import Apple from "pages/EmployeeApp/Clients/Apple/Apple";
 import Facebook from "pages/EmployeeApp/Clients/Facebook/Facebook";
+import LayoutEmployee from "EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee";
+import Employees from "EmployeeProjectApp/components/Employees/Employees";
+import CreateEmployee from "EmployeeProjectApp/components/CreateEmployee/CreateEmployee"
 
 //                                                   Lessons
 import Lesson_06 from "./lessons/Lesson_06/Lesson_06";
@@ -17,8 +20,7 @@ import Lesson_07 from "./lessons/Lesson_07/Lesson_07";
 import Lesson_08 from "lessons/Lesson_08/Lesson_08";
 import Lesson_09 from "lessons/lesson_09/Lesson_09";
 import Lesson_10 from "lessons/Lesson_10/Lesson_10";
-import Lesson_13 from "lessons/Lesson_13/Lesson_13"
-import Lesson_14 from "lessons/Lesson_14/Lesson_14"
+import Lesson_13 from "lessons/Lesson_13/Lesson_13";
 
 //                                                   Homeworks
 import Homework_06 from "./homeworks/Homework_06/Homework_06";
@@ -59,7 +61,7 @@ function App() {
       {/* <Lesson_10 /> */}
       {/* <Lesson_11 /> */}
       {/* <Lesson_13/> */}
-      <Lesson_14 />
+      {/* <Lesson_14 /> */}
 
       {/* ---------------------------------------------------- Homeworks -------------------------------------------------------*/}
       {/* <Homework_06 /> */}
@@ -72,6 +74,13 @@ function App() {
 
       {/* <Draft_1_l7 /> */}
       {/* </div> */}
+      <LayoutEmployee>
+        <Routes>
+          <Route path="/createEmployee" element={<CreateEmployee />} />
+          <Route path="/employee" element={<Employees/>}/>
+          <Route path="*" element="Page Not Found!" />
+        </Routes>
+      </LayoutEmployee>
     </BrowserRouter>
   );
 }

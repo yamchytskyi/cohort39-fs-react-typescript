@@ -1,4 +1,4 @@
-
+import { EmployeeProps } from "./types"
 
 function Employees() {
   return (
