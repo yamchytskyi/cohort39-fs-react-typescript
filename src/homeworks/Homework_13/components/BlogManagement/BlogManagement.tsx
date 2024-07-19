@@ -7,45 +7,35 @@ import Input from "components/Input/Input";
 
 import { StyledFormContainer, StyledInputsContainer } from "./styles";
 
-export interface MessageData {
-  textarea: string;
-}
-
-export const BlogContext = createContext<MessageData | undefined>({
-  textarea: "",
-});
+export const BlogContext = createContext<string | undefined>("");
 
 function BlogManagement() {
-  const [userMessage, setUserMessage] = useState<MessageData | undefined>(undefined);
-  
+  const [userMessage, setUserMessage] = useState<string | undefined>("");
+
   const formik = useFormik({
     initialValues: {
       textarea: "",
     },
 
-   
-
     onSubmit: (values) => {
-      setUserMessage({textarea: values.textarea});
+      setUserMessage(values.textarea);
     },
   });
-
   return (
     <BlogContext.Provider value={userMessage}>
-      {" "}
       <StyledFormContainer onSubmit={formik.handleSubmit}>
         <StyledInputsContainer>
           <Input
-            id="input-textarea"
             name="textarea"
+            label="Message"
+            id="textarea_input"
             value={formik.values.textarea}
             onChange={formik.handleChange}
             type="text"
-            label="Textarea"
-            placeholder="Enter your text"
+            placeholder="Enter your message"
           />
+          <Button name="Post" type="submit" isRed={true} />
         </StyledInputsContainer>
-        <Button name="Post" isRed={true} type="submit" />
         <Card />
       </StyledFormContainer>
     </BlogContext.Provider>
