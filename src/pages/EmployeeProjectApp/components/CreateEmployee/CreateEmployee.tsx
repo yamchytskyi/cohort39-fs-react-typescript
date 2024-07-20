@@ -4,10 +4,9 @@ import * as Yup from "yup";
 
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
-import {InfoAboutEmployee} from "EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee"
+import {InfoAboutEmployee} from "pages/EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee"
 
 import { EMPLOYEE_FORM_NAMES } from "./types";
-
 import {
   StyledFormContainer,
   StyledTitle,
@@ -15,9 +14,8 @@ import {
 } from "./styles";
 
 function CreateEmployee() {
-const layoutEmployeeData = useContext(InfoAboutEmployee)
-console.log(layoutEmployeeData)
 
+const layoutEmployeeData = useContext(InfoAboutEmployee)
 
   const validationSchema = Yup.object().shape({
     [EMPLOYEE_FORM_NAMES.NAME]: Yup.string()
@@ -41,7 +39,7 @@ console.log(layoutEmployeeData)
     initialValues: {
       [EMPLOYEE_FORM_NAMES.NAME]: "",
       [EMPLOYEE_FORM_NAMES.SURNAME]: "",
-      [EMPLOYEE_FORM_NAMES.AGE]: 0,
+      [EMPLOYEE_FORM_NAMES.AGE]: "",
       [EMPLOYEE_FORM_NAMES.JOB_POSITION]: "",
     },
     validationSchema: validationSchema,
@@ -50,21 +48,9 @@ console.log(layoutEmployeeData)
  
     validateOnChange: true,
     onSubmit: (values, helpers) => {
-      console.log()
      layoutEmployeeData.setEmployeeData(values)
     },
   });
-
-
-
-
-  const login = (event: React.MouseEvent): void => {
-    // event.preventDefault();
-    // console.log("Data to send on a server", {
-    //   email: emailValue,
-    //   passord: passwordValue,
-    // });
-  };
 
   return (
     <StyledFormContainer onSubmit={formik.handleSubmit}>
@@ -76,6 +62,7 @@ console.log(layoutEmployeeData)
           type="text"
           placeholder="John"
           label="Name*"
+          value={formik.values[EMPLOYEE_FORM_NAMES.NAME]}
        
         />
         <Input
@@ -84,6 +71,7 @@ console.log(layoutEmployeeData)
           type="text"
           placeholder="Johnson"
           label="Surname*"
+          value={formik.values[EMPLOYEE_FORM_NAMES.SURNAME]}
         />
         <Input
           id="age-id"
@@ -91,6 +79,7 @@ console.log(layoutEmployeeData)
           type="text"
           placeholder="25"
           label="Age*"
+          value={formik.values[EMPLOYEE_FORM_NAMES.AGE]}
         />
         <Input
           id="job-position-id"
@@ -98,6 +87,7 @@ console.log(layoutEmployeeData)
           type="text"
           placeholder="QA"
           label="Job Position*"
+          value={formik.values[EMPLOYEE_FORM_NAMES.JOB_POSITION]}
         />
       </StyledInputsContainer>
       <Button name="Create" type="submit" disabled={formik.isSubmitting} />

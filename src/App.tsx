@@ -10,9 +10,9 @@ import Clients from "pages/EmployeeApp/Clients/Clients";
 import Tesla from "pages/EmployeeApp/Clients/Tesla/Tesla";
 import Apple from "pages/EmployeeApp/Clients/Apple/Apple";
 import Facebook from "pages/EmployeeApp/Clients/Facebook/Facebook";
-import LayoutEmployee from "EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee";
-import Employees from "EmployeeProjectApp/components/Employees/Employees";
-import CreateEmployee from "EmployeeProjectApp/components/CreateEmployee/CreateEmployee"
+import LayoutEmployee from "pages/EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee";
+import Employees from "pages/EmployeeProjectApp/components/Employees/Employees";
+import CreateEmployee from "pages/EmployeeProjectApp/components/CreateEmployee/CreateEmployee";
 
 //                                                   Lessons
 import Lesson_06 from "./lessons/Lesson_06/Lesson_06";
@@ -76,8 +76,9 @@ function App() {
       {/* </div> */}
       <LayoutEmployee>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/createEmployee" element={<CreateEmployee />} />
-          <Route path="/employee" element={<Employees/>}/>
+          <Route path="/employee" element={<Employees />} />
           <Route path="*" element="Page Not Found!" />
         </Routes>
       </LayoutEmployee>

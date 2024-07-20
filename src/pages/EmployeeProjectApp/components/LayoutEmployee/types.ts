@@ -7,7 +7,7 @@ export interface LayoutProps {
 export interface EmployeeData {
   name: string,
   surname: string,
-  age: number,
+  age: string,
   jobPosition: string
 }
 
