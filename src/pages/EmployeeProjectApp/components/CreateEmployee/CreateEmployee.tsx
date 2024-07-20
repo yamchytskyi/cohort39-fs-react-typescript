@@ -1,10 +1,11 @@
-import { useContext,  } from "react";
+import { createContext, useContext,  } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 import {InfoAboutEmployee} from "pages/EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee"
+// import {LayoutEmployeeContextData} from 
 
 import { EMPLOYEE_FORM_NAMES } from "./types";
 import {
@@ -12,6 +13,8 @@ import {
   StyledTitle,
   StyledInputsContainer,
 } from "./styles";
+
+// export const InputsEmployeeData = createContext<LayoutEmployeeContextData>()
 
 function CreateEmployee() {
 
@@ -48,9 +51,12 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
  
     validateOnChange: true,
     onSubmit: (values, helpers) => {
+      console.log("onSubmit", values)
      layoutEmployeeData.setEmployeeData(values)
     },
   });
+
+  console.log(layoutEmployeeData)
 
   return (
     <StyledFormContainer onSubmit={formik.handleSubmit}>
@@ -63,6 +69,7 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
           placeholder="John"
           label="Name*"
           value={formik.values[EMPLOYEE_FORM_NAMES.NAME]}
+          onChange={formik.handleChange}
        
         />
         <Input
@@ -72,6 +79,8 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
           placeholder="Johnson"
           label="Surname*"
           value={formik.values[EMPLOYEE_FORM_NAMES.SURNAME]}
+          onChange={formik.handleChange}
+
         />
         <Input
           id="age-id"
@@ -80,6 +89,8 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
           placeholder="25"
           label="Age*"
           value={formik.values[EMPLOYEE_FORM_NAMES.AGE]}
+          onChange={formik.handleChange}
+
         />
         <Input
           id="job-position-id"
@@ -88,6 +99,8 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
           placeholder="QA"
           label="Job Position*"
           value={formik.values[EMPLOYEE_FORM_NAMES.JOB_POSITION]}
+          onChange={formik.handleChange}
+
         />
       </StyledInputsContainer>
       <Button name="Create" type="submit" disabled={formik.isSubmitting} />

@@ -31,6 +31,7 @@ function LayoutEmployee({ children }: LayoutProps) {
     navigate("/");
   };
 
+
   return (
     <InfoAboutEmployee.Provider
       value={{
