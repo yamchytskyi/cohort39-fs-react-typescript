@@ -13,11 +13,6 @@ export const StyledFormContainer = styled.form`
   gap: 30px;
 `;
 
-export const StyledTitle = styled.p`
-  color: #000000;
-  font-size: 24px;
-  font-weight: normal;
-`;
 export const StyledInputsContainer = styled.div`
   display: flex;
   flex-direction: column;

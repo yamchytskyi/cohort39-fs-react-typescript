@@ -1,24 +1,18 @@
-import { createContext, useContext,  } from "react";
+import { useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
-import {InfoAboutEmployee} from "pages/EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee"
-// import {LayoutEmployeeContextData} from 
+import LayoutEmployee, {
+  InfoAboutEmployee,
+} from "pages/EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee";
 
 import { EMPLOYEE_FORM_NAMES } from "./types";
-import {
-  StyledFormContainer,
-  StyledTitle,
-  StyledInputsContainer,
-} from "./styles";
-
-// export const InputsEmployeeData = createContext<LayoutEmployeeContextData>()
+import { StyledFormContainer, StyledInputsContainer } from "./styles";
 
 function CreateEmployee() {
-
-const layoutEmployeeData = useContext(InfoAboutEmployee)
+  const layoutEmployeeData = useContext(InfoAboutEmployee);
 
   const validationSchema = Yup.object().shape({
     [EMPLOYEE_FORM_NAMES.NAME]: Yup.string()
@@ -28,17 +22,17 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
     [EMPLOYEE_FORM_NAMES.SURNAME]: Yup.string()
       .required("This field is required")
       .max(15, "Surname field must contain maximum 15 characters"),
-      [EMPLOYEE_FORM_NAMES.AGE]: Yup.number()
+    [EMPLOYEE_FORM_NAMES.AGE]: Yup.string()
       .required("This field is required")
       .min(1, "Age field must contain minimum 1 characters")
       .max(3, "Age field must contain maximum 3 characters"),
-      [EMPLOYEE_FORM_NAMES.JOB_POSITION]: Yup.string()
-      .max(30, "Job Position field must contain maximum 30 characters"),
-      
+    [EMPLOYEE_FORM_NAMES.JOB_POSITION]: Yup.string().max(
+      30,
+      "Job Position field must contain maximum 30 characters"
+    ),
   });
 
   const formik = useFormik({
-
     initialValues: {
       [EMPLOYEE_FORM_NAMES.NAME]: "",
       [EMPLOYEE_FORM_NAMES.SURNAME]: "",
@@ -48,19 +42,17 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
     validationSchema: validationSchema,
 
     validateOnMount: false,
- 
+
     validateOnChange: true,
-    onSubmit: (values, helpers) => {
-      console.log("onSubmit", values)
-     layoutEmployeeData.setEmployeeData(values)
+    onSubmit: (values) => {
+      layoutEmployeeData.setEmployeeData(values);
     },
   });
 
-  console.log(layoutEmployeeData)
+  console.log(layoutEmployeeData);
 
   return (
     <StyledFormContainer onSubmit={formik.handleSubmit}>
-      <StyledTitle>Login form</StyledTitle>
       <StyledInputsContainer>
         <Input
           id="name-id"
@@ -70,7 +62,7 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
           label="Name*"
           value={formik.values[EMPLOYEE_FORM_NAMES.NAME]}
           onChange={formik.handleChange}
-       
+          error={formik.errors[EMPLOYEE_FORM_NAMES.NAME]}
         />
         <Input
           id="surname-id"
@@ -80,7 +72,7 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
           label="Surname*"
           value={formik.values[EMPLOYEE_FORM_NAMES.SURNAME]}
           onChange={formik.handleChange}
-
+          error={formik.errors[EMPLOYEE_FORM_NAMES.SURNAME]}
         />
         <Input
           id="age-id"
@@ -90,7 +82,7 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
           label="Age*"
           value={formik.values[EMPLOYEE_FORM_NAMES.AGE]}
           onChange={formik.handleChange}
-
+          error={formik.errors[EMPLOYEE_FORM_NAMES.AGE]}
         />
         <Input
           id="job-position-id"
@@ -100,6 +92,7 @@ const layoutEmployeeData = useContext(InfoAboutEmployee)
           label="Job Position*"
           value={formik.values[EMPLOYEE_FORM_NAMES.JOB_POSITION]}
           onChange={formik.handleChange}
+          error={formik.errors[EMPLOYEE_FORM_NAMES.JOB_POSITION]}
 
         />
       </StyledInputsContainer>

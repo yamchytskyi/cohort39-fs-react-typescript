@@ -76,7 +76,7 @@ function App() {
       {/* </div> */}
       <LayoutEmployee>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<CreateEmployee />} />
           <Route path="/createEmployee" element={<CreateEmployee />} />
           <Route path="/employee" element={<Employees />} />
           <Route path="*" element="Page Not Found!" />

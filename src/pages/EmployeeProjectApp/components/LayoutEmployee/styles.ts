@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 import { NavLink, Link as SimpleLink } from "react-router-dom";
-import logo_viper_red from "assets/images/logo_viper_red.png";
+import logo_viper_blue from "assets/images/logo_viper_blue.png";
 
 import { colors } from "styles/colors";
 
@@ -33,7 +33,7 @@ export const LogoImg = styled.img`
   width: 100%;
   height: 100%;
   &:hover {
-    content: url(${logo_viper_red});
+    content: url(${logo_viper_blue});
   }
 `;
 
@@ -51,12 +51,14 @@ export const Link = styled(NavLink)`
   font-weight: normal;
   text-decoration: none;
   &:hover {
-    color: white;
+    color: ${colors.PRIMARY_BLUE};
   }
 `;
 
 export const Main = styled.main`
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
   padding: 40px;
 `;

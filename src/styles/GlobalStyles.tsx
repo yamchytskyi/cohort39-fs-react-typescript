@@ -1,6 +1,7 @@
 import { Global, css } from "@emotion/react";
 
 const globalAppStyles = css`
+
   * {
     box-sizing: border-box;
   }
