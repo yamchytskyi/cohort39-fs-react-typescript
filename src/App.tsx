@@ -10,9 +10,7 @@ import Clients from "pages/EmployeeApp/Clients/Clients";
 import Tesla from "pages/EmployeeApp/Clients/Tesla/Tesla";
 import Apple from "pages/EmployeeApp/Clients/Apple/Apple";
 import Facebook from "pages/EmployeeApp/Clients/Facebook/Facebook";
-import LayoutEmployee from "pages/EmployeeProjectApp/components/LayoutEmployee/LayoutEmployee";
-import Employees from "pages/EmployeeProjectApp/components/Employees/Employees";
-import CreateEmployee from "pages/EmployeeProjectApp/components/CreateEmployee/CreateEmployee";
+
 
 //                                                   Lessons
 import Lesson_06 from "./lessons/Lesson_06/Lesson_06";
@@ -32,6 +30,7 @@ import Homework_11 from "homeworks/Homework_11/Homework_11";
 //                                                   Drafts
 import Draft_1_l7 from "./lessons/Lesson_07/Draft_1_l7/Draft_1_l7";
 import JokeAPI from "lessons/lesson_09/JokeAPI/JokeAPI";
+// import ProjectNavigation from "pages/ProjectNavigation/ProjectNavigation";
 
 function App() {
   return (
@@ -74,14 +73,9 @@ function App() {
 
       {/* <Draft_1_l7 /> */}
       {/* </div> */}
-      <LayoutEmployee>
-        <Routes>
-          <Route path="/" element={<CreateEmployee />} />
-          <Route path="/createEmployee" element={<CreateEmployee />} />
-          <Route path="/employee" element={<Employees />} />
-          <Route path="*" element="Page Not Found!" />
-        </Routes>
-      </LayoutEmployee>
+      {/* <ProjectNavigation /> */}
+      {/*  --------------------------------------------------- Projects-----------------------------------------------------------*/}
+      
     </BrowserRouter>
   );
 }
